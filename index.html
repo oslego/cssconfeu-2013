@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Digital Publishing with CSS Regions</title>
+
+		<meta name="description" content="Cutting-edge CSS features - Gaining control of Web Design">
+		<meta name="author" content="Razvan Caliman">
+
+		<meta name="deck" content="reveal.js by Hakim el Hattab (@hakimel)">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/adobe.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<script src="http://use.edgefonts.net/lato.js"></script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+		    
+      <a href="http://html.adobe.com"><img src="resources/adobelogo.svg" id="logo" alt="" /></a>
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+          <h1>cutting-edge CSS Features<small>Gaining control of Web Design</small></h1>
+					<p>
+						<a href="http://razvancaliman.com">Razvan Caliman</a> / <a href="http://twitter.com/razvancaliman">@razvancaliman</a>
+					</p>
+				</section>
+				
+        <section>
+            <h2>Overview</h2>
+            <ul class="toc">
+              <li class="current">
+                CSS Regions
+              </li>
+              <li>
+                CSS Blend Modes
+              </li>
+              <li>
+                CSS Masking
+              </li>
+              <li>
+                CSS Shapes
+              </li>
+            </ul>
+        </section>
+                
+        <section data-state="photo">
+            <img src="resources/travel/ipad_landscape_Page_6.jpg" alt="" />
+        </section>
+
+        <section data-state="regionsbg">
+            <h1>CSS Regions</h1>
+            <img src="resources/cssregions-illustration.png" alt="illustration of content flowing from one region to another" width="50%" />
+        </section>
+        
+        <section data-state="regionsbg">
+            <p>
+                <img src="resources/slide_cssregions" alt="illustration of complex layout with regions" width="100%" />
+            </p>
+        </section>
+        
+        <section data-state="regionsbg">
+<pre><code>
+  .content {
+    /* collect content into a named flow */
+    flow-into: myFlow;
+  }
+
+  .region {
+    /* render the content from the named flow */
+    flow-from: myFlow;
+  }
+
+</code></pre>
+        </section>
+        
+        
+        <section data-state="regionsbg">
+            <img src="resources/flow-regions.png" width="100%" alt="illustration of flows and regions" />
+        </section>
+        
+        <section data-state="regionsbg">
+            <h2>Markup Separation</h2>
+<pre><code>
+  &lt;!-- content: semantic markup --&gt;
+  &lt;article&gt; 
+    &lt;h1&gt;Title&lt;/h1&gt;
+    &lt;p&gt;...&lt;/p&gt;    
+  &lt;/article&gt;
+
+  &lt;!-- layout: helper markup --&gt;
+  &lt;div class=&quot;region&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;region&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;region&quot;&gt;&lt;/div&gt;  
+
+</code></pre>
+        </section>
+        
+        
+        <section data-state="regionsbg">
+            <h2>Aggregate content</h2>
+<pre><code>
+  /* collect content from different places */
+  header nav, 
+  footer a {
+    flow-into: menuFlow;
+  }
+
+  #menu {
+    flow-from: menuFlow;
+  }
+
+</code></pre>
+        </section>
+        
+        
+        
+        <section data-state='alert'>
+            <h2><small>Regions are only</small> <br />Visual Containers</h2>
+            <aside class="notes">
+                No DOM manipulation (parentNode). <br />
+                No CSS inheritance
+            </aside>
+        </section>
+        
+        <section data-state="regionsbg">
+
+            <h2>CSS Regions Status</h2>
+            <div class="fragment">
+                <p><a href="http://www.w3.org/TR/css3-regions/">W3C Working Draft</a> - Adobe, Microsoft</p>
+                <hr />
+            </div>
+
+            <div class="fragment">
+                <div class="hlist">
+                    <img src="resources/webkit.png" alt="Webkit browser logo" />
+                    <img src="resources/chrome.png" alt="Chrome browser logo" />
+                    <img src="resources/ie-256.png" alt="Internet Explorer browser logo" />
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h1>CSS Exclusions</h1>
+            <img src="resources/grid_cssexclusions.png" alt="" />
+        </section>
+        
+
+        <section>
+            <h2>Shape Inside</h2>
+            <pre><code>
+/* wrap the text inside a circle */
+#content { 
+shape-inside: circle(50px, 50px 50px)
+}
+        </code></pre>
+        <img src="resources/shape-inside.png" alt="" height='35%'/>
+
+        </section>
+
+        <section>
+            <h2>Shape Outside</h2>
+            <pre><code>
+#content { /*...*/ }
+#exclusion {
+shape-outside: circle(50px, 50px 50px)
+
+/* text content goes around both my sides */
+wrap-flow: both;
+}
+
+        </code></pre>
+        <img src="resources/shape-outside.png" alt="" height='35%'/>
+        </section>
+
+        <section>
+            <h2>Polygon shapes</h2>
+            <pre><code>
+/* non-rectangular shapes */
+#content { 
+shape-inside: polygon(x1, y1 x2, y2 ... )
+}
+        </code></pre>
+        </section>
+
+        <section>
+            <h2>Shapes from SVG</h2>
+            <pre><code>
+&lt;svg ...&gt;
+&lt;circle id=&quot;circle_shape&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;50%&quot; /&gt;
+&lt;/svg&gt;
+
+#content { 
+shape-inside: url(#circle_shape)
+}
+        </code></pre>
+        </section>
+        
+        <section>
+            <h2>CSS Exclusions <br /> and Shapes</h2>
+            <div class="fragment">
+                <p><a href="http://www.w3.org/TR/css3-exclusions/">W3C Working Draft</a> - Adobe, Microsoft</p>
+            </div>
+            <div class="fragment">
+                <div class="hlist">
+                    <img src="resources/webkit.png" alt="Webkit nightly browser logo" />
+                    <img src="resources/chrome-canary.png" alt="Chrome Canary browser logo" />
+                </div>
+            </div>
+        </section>
+        
+                      
+				<section>
+					<h1>end</h1>
+          <h2>
+              <a href="http://twitter.com/razvancaliman">@razvancaliman</a>
+          </h2> 
+          <p><a href="//html.adobe.com">html.adobe.com</a></p>
+				</section>
+				
+                <section data-state="resources">
+                    <p>CSS Regions</p>
+                    <ul>
+                        <li>
+                            <a href="http://www.w3.org/TR/css3-regions/">CSS Regions</a> Proposal to W3C
+                        </li>
+                        <li>
+                            <a href="http://blogs.adobe.com/webplatform/">Adobe Web Platform</a> blog
+                        </li>
+                        <li>
+                            <a href="http://docs.webplatform.org/wiki/tutorials/css-regions">CSS Regions</a> tutorial
+                        </li>
+                        <li>
+                            <a href="http://html.adobe.com/webstandards/cssregions/">CSS Regions</a> on html.adobe.com
+                        </li>
+                    </ul>
+                    <p>CSS Exclusions and Shapes</p>
+                    <ul>
+                        <li>
+                            <a href="http://www.w3.org/TR/css3-exclusions/">CSS Exclusions and Shapes</a> Proposal to W3C
+                        </li>
+                        <li>
+                            <a href="http://html.adobe.com/webstandards/cssexclusions/">CSS Exclusions</a> on html.adobe.com
+                        </li>
+                        <li>
+                            <a href="http://hansmuller-webkit.blogspot.co.uk/">Hans Muller</a>'s blog
+                        </li>
+                    </ul>
+                    <p>Web Components</p>
+                    <ul>
+                        <li>
+                            <a href="http://www.w3.org/TR/components-intro/">Introduction to Web Components</a>
+                        </li>
+                        <li>
+                            <a href="http://html5-demos.appspot.com/static/webcomponents/index.html#1">Web Components</a> slides by Eric Bidelman
+                        </li>
+                    </ul>
+                </section>
+				
+                <section>
+                    <h2>Thank you!</h2>
+                    <ul>
+                        <li>
+                            <a href="http://lab.hakim.se/reveal-js/">Reveal.js</a> created by <a href="http://hakim.se">Hakim el Hattab</a>
+                        </li>
+                        <li>
+                            <a href="http://thenounproject.com/noun/tablet/#icon-No4103" target="_blank">Tablet</a> designed by <a href="http://thenounproject.com/squintongreen" target="_blank">Samuel Q. Green</a> from The Noun Project
+                        </li>
+                    </ul>
+
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+				rollingLinks: false,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
