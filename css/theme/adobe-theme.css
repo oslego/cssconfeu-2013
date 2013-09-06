@@ -203,37 +203,46 @@ body {
   opacity: 0.5; }
 
 .hlist, .canvas {
-  display: inline-block;
-  /* non-flexbox workaround */
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
-  display: -o-flex;
   display: flex;
   -webkit-justify-content: space-around;
   -moz-justify-content: space-around;
   -ms-justify-content: space-around;
-  -o-justify-content: space-around;
   justify-content: space-around; }
 
 .hlist {
   margin: 10% 0 0; }
 
-.hlist > * {
-  height: 20%;
-  max-height: 25%; }
+.hlist * {
+  -webkit-flex: 1 1 auto; }
 
-.hlist.large > * {
-  width: 50%;
-  height: auto; }
+.side-by-side {
+  display: -webkit-flex;
+  box-sizing: border-box; }
+  .side-by-side img {
+    max-width: 10em;
+    max-height: 10em; }
+  .side-by-side .side {
+    -webkit-flex: 1 1 50%; }
+  .side-by-side .side + .side {
+    margin-left: 2rem; }
 
-.canvas {
-  min-height: 400px; }
+/* ------ Blending */
+#blending-comparison figure {
+  width: 100%;
+  height: 10em;
+  padding: 0;
+  margin: 3rem 0 0;
+  position: relative;
+  background: -webkit-linear-gradient(top, rgba(211, 19, 172, 0.73), rgba(43, 192, 73, 0.87)), url("../../resources/blending-source.jpg"); }
+#blending-comparison figure.blended {
+  background-blend-mode: overlay; }
 
-.tablet-h.visible ~ .tablet {
-  background: red; }
+.reveal ul {
+  list-style: none; }
 
-/* ------------ blending illustration*/
 #blending-illustration .layer {
   display: -webkit-flex;
   -webkit-justify-content: flex-end;
@@ -243,7 +252,7 @@ body {
   #blending-illustration .layer p {
     text-align: left;
     -webkit-flex: 1 1 auto;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
+    border-bottom: 0.1em solid rgba(255, 255, 255, 0.4); }
   #blending-illustration .layer img {
     margin: 0;
     padding: 0; }
@@ -253,12 +262,14 @@ body {
     -webkit-transform-origin: right top;
     -webkit-transform: rotatex(35deg) translate(-100px, -50px);
     -webkit-filter: drop-shadow(0 1em 0.5em rgba(0, 0, 0, 0.5));
-    background-image: url("../../resources/mountain-fog.jpg");
+    background-image: url("../../resources/blending-source.jpg");
     background-repeat: none;
     background-size: cover;
     background-color: #b84276;
-    background-blend-mode: overlay; }
+    background-blend-mode: hard-light; }
   #blending-illustration .layer.source figure {
     background-color: transparent; }
   #blending-illustration .layer.destination figure {
     background-image: none; }
+  #blending-illustration .layer.result p {
+    border-style: dashed; }

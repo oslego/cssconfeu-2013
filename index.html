@@ -55,7 +55,7 @@
                 CSS Regions
               </li>
               <li>
-                CSS Blend Modes
+                CSS Blending
               </li>
               <li>
                 CSS Masking
@@ -148,17 +148,18 @@
         <section data-state="regionsbg">
 
             <h2>CSS Regions Status</h2>
-            <div class="fragment">
-                <p><a href="http://www.w3.org/TR/css3-regions/">W3C Working Draft</a> - Adobe, Microsoft</p>
-                <hr />
-            </div>
-
-            <div class="fragment">
-                <div class="hlist">
-                    <img src="resources/webkit.png" alt="Webkit browser logo" />
-                    <img src="resources/chrome.png" alt="Chrome browser logo" />
-                    <img src="resources/ie-256.png" alt="Internet Explorer browser logo" />
-                </div>
+            <p><a href="http://www.w3.org/TR/css3-regions/">W3C Working Draft</a> - Adobe, Microsoft</p>
+            
+            <div class="side-by-side">
+              <div class="side">
+                <img src="resources/webkit.png" alt="Webkit browser logo" />
+              </div>
+              <div class="side">
+                <img src="resources/chrome.png" alt="Chrome browser logo" />
+              </div>
+              <div class="side">
+                <img src="resources/ie-256.png" alt="Internet Explorer browser logo" />
+              </div>
             </div>
         </section>
         
@@ -166,6 +167,23 @@
         <section data-state='blendingbg'>
             <h1>CSS Blending</h1>
             <img src="resources/slide_csscompositing.png" alt="" />
+        </section>
+
+        <section data-state='blendingbg'>
+
+          <div id="blending-comparison" class="side-by-side">
+            <div class="side">
+              <p>simple alpha compositing</p>
+              <figure></figure>
+            </div>                         
+            
+            <div class="side">
+              <p>blend-mode: overlay</p>
+              
+              <figure class="blended"></figure>
+            </div>
+          </div>
+          
         </section>
 
         <section data-state='blendingbg'>
@@ -177,7 +195,7 @@
             </div>
 
             <div class="layer destination">
-              <p>destination</p>
+              <p>backdrop</p>
               <figure></figure>
             </div>
 
@@ -185,11 +203,119 @@
               <p>blended result</p>
               <figure></figure>
             </div>
-            
-            
           </div>
         </section>
         
+        <section data-state="blendingbg">
+          <h2>Blend modes</h2>
+          <div class="side-by-side">
+
+            <div class="side">
+              <ul>
+                <li>
+                  normal
+                </li>
+                <li>
+                  screen
+                </li>
+                <li>
+                  multiply
+                </li>
+                <li>
+                  overlay
+                </li>
+                <li>
+                  darken
+                </li>
+                <li>
+                  lighten
+                </li>
+                <li>
+                  color-dodge
+                </li>
+                <li>
+                  color-burn
+                </li>
+              </ul>
+            </div>                         
+            
+            <div class="side">
+              <ul>
+
+                <li>
+                  hard-light
+                </li>
+                <li>
+                  soft-light
+                </li>
+                <li>
+                  difference
+                </li>
+                <li>
+                  exclusion
+                </li>
+                <li>
+                  hue
+                </li>
+                <li>
+                  saturation
+                </li>
+                <li>
+                  color
+                </li>
+                <li>
+                  luminosity
+                </li>
+              </ul>
+            </div>
+          </div> 
+          
+          <p>
+            <br />
+            <a href="http://www.w3.org/TR/compositing-1/#blending">http://www.w3.org/TR/compositing-1/#blending</a>
+          </p>
+        </section>
+        
+        <section data-state="blendingbg">
+          <h2>Background Blending</h2>
+<pre><code>
+  /* blend background images of the same element */                
+  .element {
+    background: url(image1.jpg), url(image2.jpg);
+    background-blend-mode: overlay;
+  }
+  
+</code></pre>
+        </section>
+
+        <section data-state="blendingbg">
+          <h2>Element Blending</h2>
+<pre><code>
+  div { background-image: url(texture.png); }
+  
+  p {
+    mix-blend-mode: overlay;
+    font-family: "Mythos Std";
+  }
+    
+</code></pre>
+          <img src="resources/overlay-text.png" alt="" height='35%'/>
+        </section>
+        
+        <section data-state="blendingbg">
+
+            <h2>CSS Compositing and Blending Status</h2>
+            <p><a href="http://www.w3.org/TR/compositing-1/">W3C Working Draft</a> - Adobe, Canon</p>
+            
+            <div class="side-by-side">
+              <div class="side">
+                <img src="resources/webkit.png" alt="Webkit browser logo" />
+              </div>
+              <div class="side">
+                <img src="resources/chrome.png" alt="Chrome browser logo" />
+              </div>
+            </div>
+        </section>
         
         <section>
             <h1>CSS Shapes</h1>
