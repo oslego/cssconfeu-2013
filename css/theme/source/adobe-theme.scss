@@ -55,15 +55,32 @@ body {
   line-height: 0.9em;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+/*  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);*/
+}
+
+.reveal h2{
+  letter-spacing: 0.0em;
+  word-spacing: 0.2em;
 }
 
 .reveal h1 + h2{
   text-transform: none;
 }
 
-.reveal h1 {
-  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
+section:nth-child(1){
+  h1{
+    font-size: 7rem;
+  }
+  h2{
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin: 1em 0 2em;
+    color: rgba(255,255,255,0.4);
+  }
+}
+
+.no-break{
+  white-space:nowrap;
 }
 
 /*********************************************
@@ -264,8 +281,8 @@ body {
   box-sizing: border-box;
   
   img{
-    max-width: 10em;
-    max-height: 10em;
+    max-width: 7em;
+    max-height: 7em;
   }
   
   .side{
