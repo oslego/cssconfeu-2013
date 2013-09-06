@@ -52,7 +52,7 @@
         <section>
             <h2>Overview</h2>
             <ul class="toc">
-              <li class="current">
+              <li>
                 CSS Regions
               </li>
               <li>
@@ -322,10 +322,36 @@
         </section>
         
         <section>
+            
+          <h2>Shapes in CSS</h2>
+          
+          <div id="shapes-illustration">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          
+          // TODO rectangle shapes
+          
+        </section>
+
+        <section>
+                                  
+          <a href="http://css-tricks.com/examples/ShapesOfCSS/" target="_blank">
+            <img src="resources/csstricks-shapes.png" alt="" />
+          </a>
+          
+        </section>
+
+        
+        <section>
             <h1>CSS Shapes</h1>
             <img src="resources/grid_cssexclusions.png" alt="" />
         </section>
-        
+
 
         <section>
             <h2>Shape Inside</h2>
@@ -386,6 +412,57 @@
                     <img src="resources/chrome-canary.png" alt="Chrome Canary browser logo" />
                 </div>
             </div>
+        </section>
+        
+        <section>
+            <h1>CSS Masking</h1>
+        </section>
+
+        <section>
+            <h2>clipping <em>vs</em> masking</h2>
+        </section>
+
+        <section>
+          <h2>Clipping</h2>
+<pre><code>
+  .element {
+    /* clip the elemet to a circle */
+    clip-path: circle(50%, 50%, 10em);
+  }
+
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Masking</h2>
+<pre><code>
+  .element {
+    /* use an image as a mask */
+    mask-image: url(mask.png);
+  }
+  
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Masking with SVG</h2>
+<pre><code>
+  &lt;style&gt;
+    .element {
+      /* use a &lt;mask&gt; element as mask */
+      mask-image: url(#mask);
+    }
+  &lt;/style&gt;
+  
+  &lt;svg&gt;
+    &lt;defs&gt;
+      &lt;mask id=&quot;mask&quot;&gt;
+        &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
+      &lt;/mask&gt;
+    &lt;/defs&gt;
+  &lt;/svg&gt;
+  
+</code></pre>
         </section>
         
                       
