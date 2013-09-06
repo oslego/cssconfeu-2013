@@ -272,29 +272,59 @@ body {
   min-height: 400px;
 }
 
-.reveal .tablet{
-  width: 300px;     
-}
-
-.reveal .tablet-h.visible{ 
-  -webkit-transform: rotate(90deg) translateX(20px);
-  -moz-transform: rotate(90deg) translateX(20px);
-  -ms-transform: rotate(90deg) translateX(20px);
-  -o-transform: rotate(90deg) translateX(20px);
-  transform: rotate(90deg) translateX(20px);
-  -webkit-transform-origin: center;
-  -moz-transform-origin: center;
-  -ms-transform-origin: center;
-  -o-transform-origin: center;
-  transform-origin: center;
-} 
-
 .tablet-h.visible~.tablet{
   background: red;
 }
 
-/*blending illustration*/
+/* ------------ blending illustration*/
 
 #blending-illustration{
-  outline: 1px solid red;
+  
+  .layer{
+    display: -webkit-flex;
+    -webkit-justify-content: flex-end;
+    -webkit-align-items: flex-start;
+    -webkit-perspective: 1000;
+    -webkit-perspective-origin: left bottom;
+    
+    &:not(:first-of-type){
+    }
+    
+    p{
+      text-align: left;
+      -webkit-flex: 1 1 auto;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+    }
+    
+    img{
+      margin: 0;
+      padding: 0;
+    }
+    
+    figure{
+      width: 10em;
+      height: 6em;
+      -webkit-transform-origin: right top;
+      -webkit-transform: rotatex(35deg) translate(-100px, -50px);
+      -webkit-filter: drop-shadow(0 1em 0.5em rgba(0,0,0,0.5));
+      
+      background-image: url('../../resources/mountain-fog.jpg');
+      background-repeat: none;
+      background-size: cover;
+      background-color: rgb(184, 66, 118); 
+      background-blend-mode: overlay;
+    }
+
+    &.source figure{
+      background-color: transparent;
+    }
+
+    &.destination figure{
+      background-image: none;
+    } 
+
+    &.result figure{
+      
+    }
+  }
 }

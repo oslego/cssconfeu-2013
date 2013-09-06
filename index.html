@@ -15,7 +15,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/adobe.css" id="theme">
+    <link rel="stylesheet" href="css/theme/adobe-theme.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -162,66 +162,93 @@
             </div>
         </section>
         
+        
+        <section data-state='blendingbg'>
+            <h1>CSS Blending</h1>
+            <img src="resources/slide_csscompositing.png" alt="" />
+        </section>
+
+        <section data-state='blendingbg'>
+          <div id="blending-illustration">
+            
+            <div class="layer source">
+              <p>source</p>
+              <figure></figure>
+            </div>
+
+            <div class="layer destination">
+              <p>destination</p>
+              <figure></figure>
+            </div>
+
+            <div class="layer result">
+              <p>blended result</p>
+              <figure></figure>
+            </div>
+            
+            
+          </div>
+        </section>
+        
+        
         <section>
-            <h1>CSS Exclusions</h1>
+            <h1>CSS Shapes</h1>
             <img src="resources/grid_cssexclusions.png" alt="" />
         </section>
         
 
         <section>
             <h2>Shape Inside</h2>
-            <pre><code>
-/* wrap the text inside a circle */
-#content { 
-shape-inside: circle(50px, 50px 50px)
-}
-        </code></pre>
+<pre><code>
+  /* wrap the content inside a circle */
+  #content { 
+    shape-inside: circle(50%, 50%, 10em)
+  }
+  
+</code></pre>
         <img src="resources/shape-inside.png" alt="" height='35%'/>
 
         </section>
 
         <section>
             <h2>Shape Outside</h2>
-            <pre><code>
-#content { /*...*/ }
-#exclusion {
-shape-outside: circle(50px, 50px 50px)
+<pre><code>
+  #coffee {
+    float: left;
+    shape-outside: circle(50%, 50%, 10em);
+  }
 
-/* text content goes around both my sides */
-wrap-flow: both;
-}
-
-        </code></pre>
+</code></pre>
+   //TODO: add coffee image
         <img src="resources/shape-outside.png" alt="" height='35%'/>
         </section>
 
         <section>
-            <h2>Polygon shapes</h2>
-            <pre><code>
-/* non-rectangular shapes */
-#content { 
-shape-inside: polygon(x1, y1 x2, y2 ... )
-}
-        </code></pre>
+            <h2>Complex shapes</h2>
+<pre><code>
+  .content{
+    /* shape defined by points of a polygon */
+    shape-inside: polygon(x1, y1 x2, y2 ... );
+  }
+ 
+  .content{
+    /* shape defined by the transparency of an image */
+    shape-inside: url(image.png);
+    shape-image-threshold: 0.5;
+  }
+  
+</code></pre>
         </section>
-
-        <section>
-            <h2>Shapes from SVG</h2>
-            <pre><code>
-&lt;svg ...&gt;
-&lt;circle id=&quot;circle_shape&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;50%&quot; /&gt;
-&lt;/svg&gt;
-
-#content { 
-shape-inside: url(#circle_shape)
-}
-        </code></pre>
+        
+        <section data-state="photo"> 
+          // TODO: add Alice in Wonderland screenshot
+          <img src="resources/travel/ipad_landscape_Page_6.jpg" alt="" />
         </section>
         
         <section>
-            <h2>CSS Exclusions <br /> and Shapes</h2>
+            <h2>CSS Shapes</h2>
             <div class="fragment">
-                <p><a href="http://www.w3.org/TR/css3-exclusions/">W3C Working Draft</a> - Adobe, Microsoft</p>
+                <p><a href="http://www.w3.org/TR/css-shapes/">W3C Working Draft</a> - Adobe, Microsoft</p>
             </div>
             <div class="fragment">
                 <div class="hlist">
@@ -232,65 +259,58 @@ shape-inside: url(#circle_shape)
         </section>
         
                       
-				<section>
-					<h1>end</h1>
+        <section>
+          <h2>
+            <a href="//html.adobe.com">html.adobe.com</a>
+          </h2>
+        </section>
+
+        <section>
+          <h1>end</h1>
           <h2>
               <a href="http://twitter.com/razvancaliman">@razvancaliman</a>
           </h2> 
-          <p><a href="//html.adobe.com">html.adobe.com</a></p>
-				</section>
+        </section>
 				
-                <section data-state="resources">
-                    <p>CSS Regions</p>
-                    <ul>
-                        <li>
-                            <a href="http://www.w3.org/TR/css3-regions/">CSS Regions</a> Proposal to W3C
-                        </li>
-                        <li>
-                            <a href="http://blogs.adobe.com/webplatform/">Adobe Web Platform</a> blog
-                        </li>
-                        <li>
-                            <a href="http://docs.webplatform.org/wiki/tutorials/css-regions">CSS Regions</a> tutorial
-                        </li>
-                        <li>
-                            <a href="http://html.adobe.com/webstandards/cssregions/">CSS Regions</a> on html.adobe.com
-                        </li>
-                    </ul>
-                    <p>CSS Exclusions and Shapes</p>
-                    <ul>
-                        <li>
-                            <a href="http://www.w3.org/TR/css3-exclusions/">CSS Exclusions and Shapes</a> Proposal to W3C
-                        </li>
-                        <li>
-                            <a href="http://html.adobe.com/webstandards/cssexclusions/">CSS Exclusions</a> on html.adobe.com
-                        </li>
-                        <li>
-                            <a href="http://hansmuller-webkit.blogspot.co.uk/">Hans Muller</a>'s blog
-                        </li>
-                    </ul>
-                    <p>Web Components</p>
-                    <ul>
-                        <li>
-                            <a href="http://www.w3.org/TR/components-intro/">Introduction to Web Components</a>
-                        </li>
-                        <li>
-                            <a href="http://html5-demos.appspot.com/static/webcomponents/index.html#1">Web Components</a> slides by Eric Bidelman
-                        </li>
-                    </ul>
-                </section>
-				
-                <section>
-                    <h2>Thank you!</h2>
-                    <ul>
-                        <li>
-                            <a href="http://lab.hakim.se/reveal-js/">Reveal.js</a> created by <a href="http://hakim.se">Hakim el Hattab</a>
-                        </li>
-                        <li>
-                            <a href="http://thenounproject.com/noun/tablet/#icon-No4103" target="_blank">Tablet</a> designed by <a href="http://thenounproject.com/squintongreen" target="_blank">Samuel Q. Green</a> from The Noun Project
-                        </li>
-                    </ul>
+        <section data-state="resources">
+            <p>CSS Regions</p>
+            <ul>
+                <li>
+                    <a href="http://www.w3.org/TR/css3-regions/">CSS Regions</a> Proposal to W3C
+                </li>
+                <li>
+                    <a href="http://blogs.adobe.com/webplatform/">Adobe Web Platform</a> blog
+                </li>
+                <li>
+                    <a href="http://docs.webplatform.org/wiki/tutorials/css-regions">CSS Regions</a> tutorial
+                </li>
+                <li>
+                    <a href="http://html.adobe.com/webstandards/cssregions/">CSS Regions</a> on html.adobe.com
+                </li>
+            </ul>
+            <p>CSS Shapes</p>
+            <ul>
+                <li>
+                    <a href="http://www.w3.org/TR/css3-exclusions/">CSS Exclusions and Shapes</a> Proposal to W3C
+                </li>
+                <li>
+                    <a href="http://html.adobe.com/webstandards/cssexclusions/">CSS Exclusions</a> on html.adobe.com
+                </li>
+                <li>
+                    <a href="http://hansmuller-webkit.blogspot.co.uk/">Hans Muller</a>'s blog
+                </li>
+            </ul>
+        </section>
 
-                </section>
+        <section>
+            <h2>Credits</h2>
+            <ul>
+                <li>
+                    <a href="http://lab.hakim.se/reveal-js/">Reveal.js</a> created by <a href="http://hakim.se">Hakim el Hattab</a>
+                </li>
+            </ul>
+
+        </section>
 			</div>
 
 		</div>
