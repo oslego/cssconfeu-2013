@@ -206,6 +206,11 @@ section:nth-child(1){
   background-image: url(../../resources/grid_masked_dark.png), linear-gradient(to bottom, #4ba1b7 , #146c90);
 }
 
+.maskingbg .reveal .state-background{
+  background: #1D6872 top center no-repeat;
+  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #41A0A0, #1D6872);
+}
+
 .white .reveal .state-background {
   background: white;
 /*  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #6f518f, #8560a8);*/
@@ -253,7 +258,7 @@ section:nth-child(1){
   
 }
 
-.toc :not(.current) {
+.toc li.past {
   opacity: 0.5;
 }
 
@@ -278,21 +283,36 @@ section:nth-child(1){
 
 .side-by-side{
   display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
   box-sizing: border-box;
   
   img{
-    max-width: 7em;
-    max-height: 7em;
+/*    max-width: 7em;*/
+/*    max-height: 7em;*/
   }
   
   .side{
     -webkit-flex: 1 1 50%;
+    -moz-flex: 1 1 50%;
+    flex: 1 1 50%;
   }
   
   .side+.side{
     margin-left: 2rem;
   }
 }
+
+#recap .side-by-side{
+  margin-bottom: 2rem;
+
+  img {
+    max-width: auto;
+    max-height: auto;
+  }
+
+}
+
 /* ------ Blending */
 
 $blending-image-source: '../../resources/blending-source.jpg';
@@ -367,4 +387,66 @@ $blending-image-source: '../../resources/blending-source.jpg';
       border-style: dashed;
     }
   }
+}
+
+#shapes-illustration{
+  div{
+    background: rgb(255, 185, 0);
+    float: left;
+    margin: 0 1em 1em 0;
+    
+    &:nth-child(1){
+      width: 6em;
+      height: 4em;
+    }
+
+    &:nth-child(2){
+      width: 4em;
+      height: 6em;
+    }
+
+    &:nth-child(3){
+      width: 6em;
+      height: 6em;
+    }
+
+    &:nth-child(4){
+      width: 3em;
+      height: 3em;
+    }
+
+    &:nth-child(5){
+      width: 1em;
+      height: 1em;
+    }
+    
+    &:nth-child(6){
+      width: 6em;
+      height: 4em;
+      border-radius: 1em;
+      clear: left;
+    } 
+    
+    
+    &:nth-child(7){
+      width: 4em;
+      height: 6em; 
+      border-radius: 1em;
+    }
+
+
+    &:nth-child(8){
+      width: 6em;
+      height: 6em;
+      border-radius: 50%;
+    }
+
+    &:nth-child(9){
+      width: 6em;
+      height: 6em;
+      -webkit-transform: skew(15deg);
+    }
+    
+  }
+    
 }

@@ -174,6 +174,10 @@ section:nth-child(1) h2 {
   background: #4ba1b7 top center no-repeat;
   background-image: url(../../resources/grid_masked_dark.png), linear-gradient(to bottom, #4ba1b7, #146c90); }
 
+.maskingbg .reveal .state-background {
+  background: #1D6872 top center no-repeat;
+  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #41a0a0, #1d6872); }
+
 .white .reveal .state-background {
   background: white;
   /*  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #6f518f, #8560a8);*/ }
@@ -211,7 +215,7 @@ section:nth-child(1) h2 {
   list-style: none;
   padding: 0.3em 0; }
 
-.toc :not(.current) {
+.toc li.past {
   opacity: 0.5; }
 
 .hlist, .canvas {
@@ -232,14 +236,24 @@ section:nth-child(1) h2 {
 
 .side-by-side {
   display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
   box-sizing: border-box; }
   .side-by-side img {
-    max-width: 7em;
-    max-height: 7em; }
+    /*    max-width: 7em;*/
+    /*    max-height: 7em;*/ }
   .side-by-side .side {
-    -webkit-flex: 1 1 50%; }
+    -webkit-flex: 1 1 50%;
+    -moz-flex: 1 1 50%;
+    flex: 1 1 50%; }
   .side-by-side .side + .side {
     margin-left: 2rem; }
+
+#recap .side-by-side {
+  margin-bottom: 2rem; }
+  #recap .side-by-side img {
+    max-width: auto;
+    max-height: auto; }
 
 /* ------ Blending */
 #blending-comparison figure {
@@ -285,3 +299,40 @@ section:nth-child(1) h2 {
     background-image: none; }
   #blending-illustration .layer.result p {
     border-style: dashed; }
+
+#shapes-illustration div {
+  background: #ffb900;
+  float: left;
+  margin: 0 1em 1em 0; }
+  #shapes-illustration div:nth-child(1) {
+    width: 6em;
+    height: 4em; }
+  #shapes-illustration div:nth-child(2) {
+    width: 4em;
+    height: 6em; }
+  #shapes-illustration div:nth-child(3) {
+    width: 6em;
+    height: 6em; }
+  #shapes-illustration div:nth-child(4) {
+    width: 3em;
+    height: 3em; }
+  #shapes-illustration div:nth-child(5) {
+    width: 1em;
+    height: 1em; }
+  #shapes-illustration div:nth-child(6) {
+    width: 6em;
+    height: 4em;
+    border-radius: 1em;
+    clear: left; }
+  #shapes-illustration div:nth-child(7) {
+    width: 4em;
+    height: 6em;
+    border-radius: 1em; }
+  #shapes-illustration div:nth-child(8) {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%; }
+  #shapes-illustration div:nth-child(9) {
+    width: 6em;
+    height: 6em;
+    -webkit-transform: skew(15deg); }

@@ -164,7 +164,6 @@
             </div>
         </section>
         
-        
         <section data-state='blendingbg'>
             <h1>CSS Blending</h1>
             <img src="resources/slide_csscompositing.png" alt="" />
@@ -321,16 +320,16 @@
             </div>
         </section>
         
-        <section>
-              <h1>CSS Masking</h1>
+        <section data-state="maskingbg">
+            <h1>CSS Masking</h1>
             <img src="resources/css-masking.png" alt="" />
         </section>
 
-        <section>
+        <section data-state="maskingbg">
             <h2>clipping <em>vs</em> masking</h2>
         </section>
 
-        <section>
+        <section data-state="maskingbg">
           <h2>Clipping</h2>
 <pre><code>
   .element {
@@ -341,7 +340,7 @@
 </code></pre>
         </section>
 
-        <section>
+        <section data-state="maskingbg">
           <h2>Clipping with SVG</h2>
 <pre><code>
   &lt;style&gt;
@@ -364,7 +363,7 @@
         </section>
 
 
-        <section>
+        <section data-state="maskingbg">
           <h2>Masking</h2>
 <pre><code>
   .element {
@@ -375,12 +374,12 @@
 </code></pre>
         </section>
 
-        <section>
+        <section data-state="maskingbg">
             <img src="resources/mask-type-illustration.png" alt="" />
         </section>
 
 
-        <section>
+        <section data-state="maskingbg">
           <h2>Masking with SVG</h2>
 <pre><code>
   &lt;style&gt;
@@ -402,7 +401,7 @@
         </section>
 
 
-        <section>
+        <section data-state="maskingbg">
 
             <h2>CSS Masking Status</h2>
             <p><a href="http://www.w3.org/TR/css-masking/">W3C Working Draft</a> - Adobe, Mozilla, Google</p>
@@ -420,7 +419,7 @@
             </div>
         </section>
 
-        <section>
+        <section data-state="maskingbg">
           <a href="http://www.html5rocks.com/en/tutorials/masking/adobe/"  target="_blank"><img src="resources/css-masking-html5rocks.png" alt="" /></a>
           <a href="http://www.html5rocks.com/en/tutorials/masking/adobe/" target="_blank">CSS Masking on html5rocks.com</a>
         </section>
@@ -429,15 +428,16 @@
           <h2>Shapes in CSS</h2>
           
           <div id="shapes-illustration">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="fragment"></div>
+            <div class="fragment"></div>
+            <div class="fragment"></div>
+            <div class="fragment"></div>
+            <div class="fragment"></div>
+            <div class="fragment"></div>
+            <div class="fragment"></div>
+            <div class="fragment"></div>
+            <div class="fragment"></div>
           </div>
-          
-          // TODO rectangle shapes
           
         </section>
 
@@ -449,12 +449,10 @@
           
         </section>
 
-        
         <section>
             <h1>CSS Shapes</h1>
             <img src="resources/grid_cssexclusions.png" alt="" />
         </section>
-
 
         <section>
             <h2>Shape Inside</h2>
@@ -498,21 +496,53 @@
 </code></pre>
         </section>
         
-        <section data-state="photo"> 
-          // TODO: add Alice in Wonderland screenshot
-          <img src="resources/travel/ipad_landscape_Page_6.jpg" alt="" />
+        <section> 
+          <img src="resources/css-shapes-alice.jpg" alt="" />
         </section>
         
         <section>
-            <h2>CSS Shapes</h2>
-            <div class="fragment">
-                <p><a href="http://www.w3.org/TR/css-shapes/">W3C Working Draft</a> - Adobe, Microsoft</p>
+            <h2>CSS Shapes status</h2>
+            <p><a href="http://www.w3.org/TR/css-shapes/">W3C Working Draft</a> - Adobe, Microsoft</p>
+            <div class="side-by-side">
+              <div class="side">
+                <img src="resources/webkit.png" alt="Webkit browser logo" />
+              </div>
+              <div class="side">
+                <img src="resources/chrome.png" alt="Chrome browser logo" />
+              </div>
+              <div class="side">
+                <img src="resources/chrome-canary.png" alt="Chrome Canary browser logo" />
+              </div>
+              
             </div>
-            <div class="fragment">
-                <div class="hlist">
-                    <img src="resources/webkit.png" alt="Webkit nightly browser logo" />
-                    <img src="resources/chrome-canary.png" alt="Chrome Canary browser logo" />
-                </div>
+        </section>
+
+        <section id="recap">
+            <div class="side-by-side">
+              <div class="side">
+                <p>CSS Regions</p>
+                <img src="resources/cssregions-illustration.png" alt="illustration of content flowing from one region to another"  />
+              </div>
+              
+              <div class="side">
+                <p>CSS Masking</p>
+                <img src="resources/css-masking.png" alt="" />
+              </div>
+              
+            </div>           
+            
+            <div class="side-by-side">
+              
+              <div class="side">
+                <p>CSS Blending</p>
+                <img src="resources/slide_csscompositing.png" alt="" />
+              </div>
+              
+              <div class="side">
+                <p>CSS Shapes</p>
+                <img src="resources/grid_cssexclusions.png" alt="" />
+              </div>
+              
             </div>
         </section>
         
