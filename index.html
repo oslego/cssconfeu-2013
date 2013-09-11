@@ -58,9 +58,9 @@
               <li>
                 CSS Blending
               </li>
-              <li>
+              <!-- <li>
                 CSS Masking
-              </li>
+              </li> -->
               <li>
                 CSS Shapes
               </li>
@@ -320,109 +320,7 @@
             </div>
         </section>
         
-        <section data-state="maskingbg">
-            <h1>CSS Masking</h1>
-            <img src="resources/css-masking.png" alt="" />
-        </section>
 
-        <section data-state="maskingbg">
-            <h2>clipping <em>vs</em> masking</h2>
-        </section>
-
-        <section data-state="maskingbg">
-          <h2>Clipping</h2>
-<pre><code>
-  .element {
-    /* clip the element to a circle */
-    clip-path: circle(50%, 50%, 10em);
-  }
-
-</code></pre>
-        </section>
-
-        <!-- <section data-state="maskingbg">
-          <h2>Clipping with SVG</h2>
-<pre><code>
-  &lt;style&gt;
-    .element {
-      /* clip the element using SVG */
-      clip-path: url(#clipping);
-    }
-  &lt;/style&gt;
-
-  &lt;svg&gt;
-    &lt;defs&gt;
-      &lt;clipPath id=&quot;clipping&quot;&gt;
-        &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
-        &lt;path d=&quot;M90,30c0-5.523-4.477-10 ...&quot;/&gt;
-      &lt;/clipPath&gt;
-    &lt;/defs&gt;
-  &lt;/svg&gt;
-
-</code></pre>
-        </section>  -->
-
-
-        <section data-state="maskingbg">
-          <h2>Masking</h2>
-<pre><code>
-  .element {
-    /* use an image as a mask */
-    mask-image: url(mask.png);
-  }
-
-</code></pre>
-        </section>
-
-        <section data-state="maskingbg">
-            <img src="resources/mask-type-illustration.png" alt="" />
-        </section>
-
-
-        <!-- <section data-state="maskingbg">
-          <h2>Masking with SVG</h2>
-<pre><code>
-  &lt;style&gt;
-    .element {
-      /* use a &lt;mask&gt; element as mask */
-      mask-image: url(#mask);
-    }
-  &lt;/style&gt;
-
-  &lt;svg&gt;
-    &lt;defs&gt;
-      &lt;mask id=&quot;mask&quot;&gt;
-        &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
-      &lt;/mask&gt;
-    &lt;/defs&gt;
-  &lt;/svg&gt;
-
-</code></pre>
-        </section> -->
-
-
-        <section data-state="maskingbg">
-
-            <h2>CSS Masking Status</h2>
-            <p><a href="http://www.w3.org/TR/css-masking/">W3C Working Draft</a> - Adobe, Mozilla, Google</p>
-
-            <div class="side-by-side">
-              <div class="side">
-                <img src="resources/webkit.png" alt="Webkit browser logo" />
-              </div>
-              <div class="side">
-                <img src="resources/chrome.png" alt="Chrome browser logo" />
-              </div>
-              <div class="side">
-                <img src="resources/firefox.png" alt="Firefox browser logo" />
-              </div>
-            </div>
-        </section>
-
-        <section data-state="maskingbg">
-          <a href="http://www.html5rocks.com/en/tutorials/masking/adobe/"  target="_blank"><img src="resources/css-masking-html5rocks.png" alt="" /></a>
-          <a href="http://www.html5rocks.com/en/tutorials/masking/adobe/" target="_blank">CSS Masking on html5rocks.com</a>
-        </section>
         
         <section>
           <h2>Shapes in CSS</h2>
@@ -525,15 +423,6 @@
               </div>
               
               <div class="side">
-                <p>CSS Masking</p>
-                <img src="resources/css-masking.png" alt="" />
-              </div>
-              
-            </div>           
-            
-            <div class="side-by-side">
-              
-              <div class="side">
                 <p>CSS Blending</p>
                 <img src="resources/slide_csscompositing.png" alt="" />
               </div>
@@ -543,7 +432,12 @@
                 <img src="resources/grid_cssexclusions.png" alt="" />
               </div>
               
-            </div>
+              <!-- <div class="side">
+                <p>CSS Masking</p>
+                <img src="resources/css-masking.png" alt="" />
+              </div> -->
+              
+            </div>           
         </section>
         
         <section>
@@ -558,6 +452,113 @@
               <a href="http://twitter.com/razvancaliman">@razvancaliman</a>
           </h2> 
         </section>
+
+        <section>
+          <section data-state="maskingbg">
+              <h1>CSS Masking</h1>
+              <img src="resources/css-masking.png" alt="" />
+          </section>
+          
+          <section data-state="maskingbg">
+              <h2>clipping <em>vs</em> masking</h2>
+          </section>
+
+          <section data-state="maskingbg">
+            <h2>Clipping</h2>
+<pre><code>
+.element {
+  /* clip the element to a circle */
+  clip-path: circle(50%, 50%, 10em);
+}
+
+</code></pre>
+          </section>
+
+          <!-- <section data-state="maskingbg">
+            <h2>Clipping with SVG</h2>
+  <pre><code>
+    &lt;style&gt;
+      .element {
+        /* clip the element using SVG */
+        clip-path: url(#clipping);
+      }
+    &lt;/style&gt;
+
+    &lt;svg&gt;
+      &lt;defs&gt;
+        &lt;clipPath id=&quot;clipping&quot;&gt;
+          &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
+          &lt;path d=&quot;M90,30c0-5.523-4.477-10 ...&quot;/&gt;
+        &lt;/clipPath&gt;
+      &lt;/defs&gt;
+    &lt;/svg&gt;
+
+  </code></pre>
+          </section>  -->
+
+          <section data-state="maskingbg">
+            <h2>Masking</h2>
+<pre><code>
+.element {
+  /* use an image as a mask */
+  mask-image: url(mask.png);
+}
+
+</code></pre>
+          </section>
+
+          <section data-state="maskingbg">
+              <img src="resources/mask-type-illustration.png" alt="" />
+          </section>
+
+
+          <!-- <section data-state="maskingbg">
+            <h2>Masking with SVG</h2>
+  <pre><code>
+    &lt;style&gt;
+      .element {
+        /* use a &lt;mask&gt; element as mask */
+        mask-image: url(#mask);
+      }
+    &lt;/style&gt;
+
+    &lt;svg&gt;
+      &lt;defs&gt;
+        &lt;mask id=&quot;mask&quot;&gt;
+          &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
+        &lt;/mask&gt;
+      &lt;/defs&gt;
+    &lt;/svg&gt;
+
+  </code></pre>
+          </section> -->
+
+
+          <section data-state="maskingbg">
+
+              <h2>CSS Masking Status</h2>
+              <p><a href="http://www.w3.org/TR/css-masking/">W3C Working Draft</a> - Adobe, Mozilla, Google</p>
+
+              <div class="side-by-side">
+                <div class="side">
+                  <img src="resources/webkit.png" alt="Webkit browser logo" />
+                </div>
+                <div class="side">
+                  <img src="resources/chrome.png" alt="Chrome browser logo" />
+                </div>
+                <div class="side">
+                  <img src="resources/firefox.png" alt="Firefox browser logo" />
+                </div>
+              </div>
+          </section>
+
+          <section data-state="maskingbg">
+            <a href="http://www.html5rocks.com/en/tutorials/masking/adobe/"  target="_blank"><img src="resources/css-masking-html5rocks.png" alt="" /></a>
+            <a href="http://www.html5rocks.com/en/tutorials/masking/adobe/" target="_blank">CSS Masking on html5rocks.com</a>
+          </section>
+        </section>
+
+
 				
         <section data-state="resources">
             <p>CSS Regions</p>
