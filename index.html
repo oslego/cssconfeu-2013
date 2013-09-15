@@ -97,11 +97,19 @@
 </code></pre>
         </section>
         
-        
         <section data-state="regionsbg">
-            <img src="resources/flow-regions.png" width="100%" alt="illustration of flows and regions" />
+          <img src="resources/flow-regions.png" width="100%" alt="Illustration of flows and regions" />
         </section>
-        
+
+        <section data-state="regionsbg">
+          <a href="http://adobe-webplatform.github.io/Demo-for-National-Geographic-Orphan-Elephants/">
+            <img src="resources/css-regions-elephants.jpg" width="100%" alt="Demo of CSS Regions with viewport-height units." />
+          </a>
+          <a href="http://adobe-webplatform.github.io/Demo-for-National-Geographic-Orphan-Elephants/">
+            CSS Regions with viewport height units
+          </a>  
+        </section>
+
         <section data-state="regionsbg">
             <h2>Markup Separation</h2>
 <pre><code>
@@ -119,8 +127,16 @@
 </code></pre>
         </section>
         
+        <section data-state="regionsbg">
+          <a href="http://adobe-webplatform.github.io/regions-adaptive/">
+            <img src="resources/adaptve-ui-regions-illustration.png" width="100%" alt="Illustration of adaptive web app UI with CSS Regions" />
+          </a>
+          <a href="http://adobe-webplatform.github.io/regions-adaptive/">
+            Adaptive web app UI with CSS Regions
+          </a>  
+        </section>
         
-        <!-- <section data-state="regionsbg">
+        <section data-state="regionsbg">
             <h2>Aggregate content</h2>
 <pre><code>
   /* collect content from different places */
@@ -134,8 +150,7 @@
   }
 
 </code></pre>
-        </section> -->
-        
+        </section>
         
         
         <section data-state='alert'>
@@ -276,7 +291,7 @@
           </p>
         </section>
         
-        <!-- <section data-state="blendingbg">
+        <section data-state="blendingbg">
           <h2>Background Blending</h2>
 <pre><code>
   /* blend background images of the same element */                
@@ -286,7 +301,7 @@
   }
   
 </code></pre>
-        </section> -->
+        </section>
 
         <section data-state="blendingbg">
           <h2>Element Blending</h2>
@@ -385,7 +400,7 @@
   }
  
   .content{
-    /* shape defined by the transparency of an image */
+    /* shape defined by the alpha levels of an image */
     shape-inside: url(image.png);
     shape-image-threshold: 0.5;
   }
@@ -473,27 +488,27 @@
 </code></pre>
           </section>
 
-          <!-- <section data-state="maskingbg">
+          <section data-state="maskingbg">
             <h2>Clipping with SVG</h2>
-  <pre><code>
-    &lt;style&gt;
-      .element {
-        /* clip the element using SVG */
-        clip-path: url(#clipping);
-      }
-    &lt;/style&gt;
+<pre><code>
+  &lt;style&gt;
+    .element {
+      /* clip the element using SVG */
+      clip-path: url(#clipping);
+    }
+  &lt;/style&gt;
 
-    &lt;svg&gt;
-      &lt;defs&gt;
-        &lt;clipPath id=&quot;clipping&quot;&gt;
-          &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
-          &lt;path d=&quot;M90,30c0-5.523-4.477-10 ...&quot;/&gt;
-        &lt;/clipPath&gt;
-      &lt;/defs&gt;
-    &lt;/svg&gt;
+  &lt;svg&gt;
+    &lt;defs&gt;
+      &lt;clipPath id=&quot;clipping&quot;&gt;
+        &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
+        &lt;path d=&quot;M90,30c0-5.523-4.477-10 ...&quot;/&gt;
+      &lt;/clipPath&gt;
+    &lt;/defs&gt;
+  &lt;/svg&gt;
 
-  </code></pre>
-          </section>  -->
+</code></pre>
+          </section> 
 
           <section data-state="maskingbg">
             <h2>Masking</h2>
@@ -511,26 +526,26 @@
           </section>
 
 
-          <!-- <section data-state="maskingbg">
+          <section data-state="maskingbg">
             <h2>Masking with SVG</h2>
-  <pre><code>
-    &lt;style&gt;
-      .element {
-        /* use a &lt;mask&gt; element as mask */
-        mask-image: url(#mask);
-      }
-    &lt;/style&gt;
+<pre><code>
+  &lt;style&gt;
+    .element {
+      /* use a &lt;mask&gt; element as mask */
+      mask-image: url(#mask);
+    }
+  &lt;/style&gt;
 
-    &lt;svg&gt;
-      &lt;defs&gt;
-        &lt;mask id=&quot;mask&quot;&gt;
-          &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
-        &lt;/mask&gt;
-      &lt;/defs&gt;
-    &lt;/svg&gt;
+  &lt;svg&gt;
+    &lt;defs&gt;
+      &lt;mask id=&quot;mask&quot;&gt;
+        &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
+      &lt;/mask&gt;
+    &lt;/defs&gt;
+  &lt;/svg&gt;
 
-  </code></pre>
-          </section> -->
+</code></pre>
+          </section>
 
 
           <section data-state="maskingbg">
@@ -560,28 +575,29 @@
 
 				
         <section data-state="resources">
+            <h2>Resources</h2>
+            <a href="http://blogs.adobe.com/webplatform/">Adobe Web Platform</a> blog
+            
             <p>CSS Regions</p>
             <ul>
                 <li>
-                    <a href="http://www.w3.org/TR/css3-regions/">CSS Regions</a> Proposal to W3C
-                </li>
-                <li>
-                    <a href="http://blogs.adobe.com/webplatform/">Adobe Web Platform</a> blog
+                    <a href="http://html.adobe.com/webstandards/cssregions/">CSS Regions</a> on html.adobe.com
                 </li>
                 <li>
                     <a href="http://docs.webplatform.org/wiki/tutorials/css-regions">CSS Regions</a> tutorial
                 </li>
                 <li>
-                    <a href="http://html.adobe.com/webstandards/cssregions/">CSS Regions</a> on html.adobe.com
+                    <a href="http://www.w3.org/TR/css3-regions/">CSS Regions</a> W3C Proposal
                 </li>
             </ul>
+            
             <p>CSS Shapes</p>
             <ul>
                 <li>
-                    <a href="http://www.w3.org/TR/css3-exclusions/">CSS Exclusions and Shapes</a> Proposal to W3C
+                    <a href="http://html.adobe.com/webstandards/cssshapes/">CSS Shapes</a> on html.adobe.com
                 </li>
                 <li>
-                    <a href="http://html.adobe.com/webstandards/cssexclusions/">CSS Exclusions</a> on html.adobe.com
+                    <a href="http://www.w3.org/TR/css-shapes/">CSS Shapes</a> W3C Proposal
                 </li>
                 <li>
                     <a href="http://hansmuller-webkit.blogspot.co.uk/">Hans Muller</a>'s blog
@@ -627,7 +643,7 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
