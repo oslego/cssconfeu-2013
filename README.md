@@ -27,6 +27,9 @@ Start on [html.adobe.com](http://html.adobe.com)
   * [Introduction to CSS Shapes](http://html.adobe.com/webplatform/layout/shapes/)
   
   * [Code samples on CodePen.io](http://codepen.io/collection/qFesk)
+  
+  * [Demo for Alice in Wonderland ](http://adobe-webplatform.github.io/Demo-for-Alice-s-Adventures-in-Wonderland/)
+  * [Source for Demo for Alice in Wonderland](https://github.com/adobe-webplatform/Demo-for-Alice-s-Adventures-in-Wonderland)
 
 
 **CSS Blend Modes**
